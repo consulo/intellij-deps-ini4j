@@ -15,14 +15,14 @@
  */
 package org.ini4j;
 
-import org.ini4j.spi.AbstractBeanInvocationHandler;
-import org.ini4j.spi.BeanTool;
-import org.ini4j.spi.IniHandler;
-
 import java.lang.reflect.Array;
 import java.lang.reflect.Proxy;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.ini4j.spi.AbstractBeanInvocationHandler;
+import org.ini4j.spi.BeanTool;
+import org.ini4j.spi.IniHandler;
 
 public class BasicProfile extends CommonMultiMap<String, Profile.Section> implements Profile
 {
@@ -138,7 +138,7 @@ public class BasicProfile extends CommonMultiMap<String, Profile.Section> implem
         return remove(section.getName());
     }
 
-    @Override public String remove(Object sectionName, Object optionName)
+    @Override public String removeOption(Object sectionName, Object optionName)
     {
         Section sec = get(sectionName);
 
